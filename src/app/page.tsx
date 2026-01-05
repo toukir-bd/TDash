@@ -1,14 +1,19 @@
+"use client"
 
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
+import { isLoggedIn } from "@/lib/auth"
 
-import { auth } from "@/lib/auth"
-import { redirect } from "next/navigation"
+export default function HomePage() {
+  const router = useRouter()
 
-export default async function Page(): Promise<never> {
-  const session = await auth()
+  useEffect(() => {
+    if (isLoggedIn()) {
+      router.replace("/dashboard")
+    } else {
+      router.replace("/sign-in")
+    }
+  }, [router])
 
-  if (!session) {
-    redirect("/sign-in")
-  }
-
-  redirect("/dashboard")
+  return null // no content needed
 }

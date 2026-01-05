@@ -1,37 +1,18 @@
+
 // src/lib/auth.ts
-import { cookies } from "next/headers"
+const HARD_CODED_EMAIL = "user@admin.com"
+const HARD_CODED_PASSWORD = "1234"
 
-const FIXED_USER = {
-  email: "user@admin.com",
-  password: "1234",
+export function login(email: string, password: string): boolean {
+  return email === HARD_CODED_EMAIL && password === HARD_CODED_PASSWORD
 }
 
-export async function signIn(email: string, password: string) {
-  if (
-    email !== FIXED_USER.email ||
-    password !== FIXED_USER.password
-  ) {
-    return false
-  }
-
-  const cookieStore = await cookies()
-
-  cookieStore.set("session", "authenticated", {
-    httpOnly: true,
-    secure: true,
-    sameSite: "lax",
-    path: "/",
-  })
-
-  return true
+export function isLoggedIn(): boolean {
+  if (typeof window === "undefined") return false
+  return !!localStorage.getItem("token")
 }
 
-export async function signOut() {
-  const cookieStore = await cookies()
-  cookieStore.delete("session")
+export function logout() {
+  localStorage.removeItem("token")
 }
 
-export async function auth() {
-  const cookieStore = await cookies()
-  return cookieStore.get("session")?.value === "authenticated"
-}

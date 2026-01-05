@@ -1,8 +1,7 @@
 
-
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaThin.ttf") format("ttf");
+  src: url("/fonts/LufgaThin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -10,7 +9,7 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaLight.ttf") format("ttf");
+  src: url("/fonts/LufgaLight.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -18,7 +17,7 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaRegular.ttf") format("ttf");
+  src: url("/fonts/LufgaRegular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -26,7 +25,7 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaMedium.ttf") format("ttf");
+  src: url("/fonts/LufgaMedium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -34,7 +33,7 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaSemibold.ttf") format("ttf");
+  src: url("/fonts/LufgaSemibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -42,7 +41,7 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaBold.ttf") format("ttf");
+  src: url("/fonts/LufgaBold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -50,22 +49,22 @@
 
 @font-face {
   font-family: "Lufga";
-  src: url("/public/fonts/LufgaExtraBold.ttf") format("ttf");
-  font-weight: 900;
+  src: url("/fonts/LufgaExtraBold.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
-html {
+
+/* Apply global font */
+html, body {
   font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0f172a; /* Tailwind slate-950 fallback */
+  color: white;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
-body {
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-h1,h2,h3,h4,h5,h6,p,input,button,div,span{
-  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-textarea{
+
+h1,h2,h3,h4,h5,h6,p,input,button,div,span,textarea {
   font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
