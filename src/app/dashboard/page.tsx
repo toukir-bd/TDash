@@ -9,5 +9,5 @@ export default async function ManagerPage() {
     redirect("/sign-in")
   }
 
-  return <h1>Manager Dashboard</h1>
+  return <h1 className="text-center text-7xl font-semibold text-slate-800">Lufga Regular</h1>
 }

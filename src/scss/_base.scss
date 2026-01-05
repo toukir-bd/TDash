@@ -1,15 +1,71 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaThin.ttf") format("ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaLight.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaRegular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaMedium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaSemibold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaBold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/public/fonts/LufgaExtraBold.ttf") format("ttf");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 body {
-  font-family: "Urbanist", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
+  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 h1,h2,h3,h4,h5,h6,p,input,button,div,span{
-  font-family: "Urbanist", sans-serif !important;
+  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 textarea{
-  font-family: "Urbanist", sans-serif !important;
+  font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
