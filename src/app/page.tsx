@@ -1,13 +1,14 @@
 
 
-export default function Home() {
-  return (
-    <div>
-      <main>
-        <div className="text-8xl font-semibold text-slate-600 text-center">
-          Md Toukir Rahman
-        </div>
-      </main>
-    </div>
-  );
+import { auth } from "@/lib/auth"
+import { redirect } from "next/navigation"
+
+export default async function Page(): Promise<never> {
+  const session = await auth()
+
+  if (!session) {
+    redirect("/sign-in")
+  }
+
+  redirect("/dashboard")
 }
