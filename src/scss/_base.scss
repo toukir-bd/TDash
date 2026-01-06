@@ -68,3 +68,11 @@ html, body {
 h1,h2,h3,h4,h5,h6,p,input,button,div,span,textarea {
   font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+input:-webkit-autofill {
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+input:-moz-autofill {
+  box-shadow: 0 0 0px 1000px transparent inset;
+}

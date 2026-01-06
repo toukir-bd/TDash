@@ -15,18 +15,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-950 text-white">
-        <div className="flex min-h-screen">
-          {!isAuthPage && <MenuBar />}
-
-          {isAuthPage ? (
-            <main className="flex-1 p-6">{children}</main>
-          ) : (
-            <ProtectWrapper>
-              <main className="flex-1 p-6">{children}</main>
-            </ProtectWrapper>
-          )}
-        </div>
+      <body className="bg-slate-50 text-slate-900">
+        {!isAuthPage && <MenuBar />}
+        {isAuthPage ? (
+          <main>{children}</main>
+        ) : (
+          <ProtectWrapper>
+            <main>{children}</main>
+          </ProtectWrapper>
+        )}
       </body>
     </html>
   )
