@@ -43,10 +43,9 @@ export default function MenuBar() {
     <aside className="
       fixed left-0 top-0 z-40
       h-screen w-20
-      bg-[#E4E2DE] text-slate-200
-      border-r border-white/10
+      bg-[#E4E2DE] text-slate-2000 border-0
       flex flex-col items-center py-6
-      dark:bg-slate-950
+      dark:bg-slate-900 
     ">
       {/* Logo */}
       <div className="mb-8 text-lg font-bold text-white">
@@ -91,7 +90,7 @@ export default function MenuBar() {
       </nav>
 
       {/* Bottom actions */}
-      <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
+      <div className="flex flex-col gap-1 pt-6">
 
       {/* Theme toggle */}
         <button
