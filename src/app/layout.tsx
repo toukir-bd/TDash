@@ -1,29 +1,34 @@
 // src/app/layout.tsx
 import "./globals.scss"
 import { ReactNode } from "react"
-import { usePathname } from "next/navigation"
-import MenuBar from "@/components/layout/MenuBar"
-import ProtectWrapper from "@/components/layout/ProtectWrapper"
-import ThemeProvider from "@/components/layout/ThemeProvider"
+import ClientLayout from "@/components/layout/ClientLayout"
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname()
-  const authPages = ["/sign-in", "/forgot-password"]
-  const isAuthPage = authPages.includes(pathname)
-
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Apply theme BEFORE React loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  const theme = localStorage.getItem("theme");
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (_) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+
       <body className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white/80">
-        <ThemeProvider>
-          {!isAuthPage && <MenuBar />}
-          {isAuthPage ? (
-            <main>{children}</main>
-          ) : (
-            <ProtectWrapper>
-              <main>{children}</main>
-            </ProtectWrapper>
-          )}
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )

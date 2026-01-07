@@ -58,8 +58,6 @@
 /* Apply global font */
 html, body {
   font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0f172a; /* Tailwind slate-950 fallback */
-  color: white;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -75,4 +73,5 @@ input:-webkit-autofill {
 
 input:-moz-autofill {
   box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 9999s ease-in-out 0s;
 }

@@ -1,5 +1,7 @@
+
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { Eye, EyeOff } from "lucide-react"
 
 /* ------------------------------------
    Types
@@ -63,11 +65,24 @@ type FloatingLabelInputProps = InputProps & {
 }
 
 const FloatingLabelInput = React.forwardRef<HTMLInputElement, FloatingLabelInputProps>(
-  ({ id, label, ...props }, ref) => {
+  ({ id, label, type, ...props }, ref) => {
+    const [showPassword, setShowPassword] = React.useState(false)
+    const isPassword = type === "password"
     return (
       <div className="relative">
-        <FloatingInput ref={ref} id={id} {...props} />
+        <FloatingInput ref={ref} id={id} type={isPassword && showPassword ? "text" : type} {...props} />
         <FloatingLabel htmlFor={id}>{label}</FloatingLabel>
+
+        {isPassword && (
+          <button
+            type="button"
+            onClick={() => setShowPassword(prev => !prev)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+            aria-label={showPassword ? "Hide password" : "Show password"}
+          >
+            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+          </button>
+        )}
       </div>
     )
   }
