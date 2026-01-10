@@ -1,12 +1,12 @@
 
 
+
+import PageHeader from "@/components/layout/PageHeader"
+
 export default function DashboardPage() {
   return (
-    <div className="space-y-6 p-10 ms-20">
-      <h1 className="text-3xl font-bold text-white">Dashboard</h1>
-      <p className="text-slate-400">
-        Welcome to your dashboard. Here you can see quick stats and navigate to other sections.
-      </p>
+    <div className="min-h-screen ml-20 p-10 space-y-8 bg-[#E4E2DE] dark:bg-slate-950">
+      <PageHeader description="Welcome to your dashboard. Here you can see quick stats and navigate to other sections."/>
 
       {/* Example cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
