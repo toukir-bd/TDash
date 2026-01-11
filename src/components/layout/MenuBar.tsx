@@ -2,20 +2,18 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/hooks/useTheme"
 import {
   LayoutDashboard,
-  User,
   Bell,
   Settings,
   LogOut,
   Building2,
-  Stethoscope,
   Shield,
   Briefcase,
-  GitBranch,
   Users, 
   Sun, 
   Moon
@@ -23,125 +21,51 @@ import {
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { label: "Profile", href: "/profile", icon: User },
-  { label: "Notifications", href: "/notifications", icon: Bell },
+  { label: "Profile", href: "/profile", icon: Users },
   { label: "Management", href: "/management", icon: Briefcase },
-  { label: "Branches", href: "/branches", icon: GitBranch },
-  { label: "Doctors", href: "/doctors", icon: Stethoscope },
   { label: "Centers", href: "/centers", icon: Building2 },
-  { label: "Policy", href: "/policy", icon: Shield },
   { label: "Accounts", href: "/accounts", icon: Users },
+  { label: "Policy", href: "/policy", icon: Shield },
   { label: "Settings", href: "/settings", icon: Settings },
 ]
-
-
 
 export default function MenuBar() {
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
   return (
-    <aside className="
-      fixed left-0 top-0 z-40
-      h-screen w-20
-      bg-[#E4E2DE] text-slate-2000 border-0
-      flex flex-col items-center py-6
-      dark:bg-slate-900 
-    ">
-      {/* Logo */}
+    <aside className="menuBar-side">
       <div className="mb-8 text-lg font-bold text-white">
         ⚡
       </div>
-
-      {/* Main navigation */}
       <nav className="flex flex-col gap-1 flex-1">
         {navItems.map(({ href, icon: Icon, label }) => {
           const isActive = pathname === href
-
           return (
-            <Link
-              key={href}
-              href={href}
-              title={label}
-              className={cn(
-                `
-                group relative
-                flex h-11 w-11 items-center justify-center
-                rounded-lg transition bg-white/80
-                `,
-                isActive
-                  ? "bg-slate-700 text-white"
-                  : "text-slate-600 hover:bg-white hover:text-slate-900"
-              )}
-            >
-              <Icon className="h-5 w-5" />
-
-              {/* Tooltip */}
-              <span className="
-                pointer-events-none absolute left-14
-                whitespace-nowrap rounded-md bg-slate-900 px-2 py-1
-                text-xs text-white opacity-0
-                group-hover:opacity-100
-              ">
-                {label}
-              </span>
+            <Link key={href} href={href} title={label} className={cn('navMenus', isActive ? "active" : "")}>
+              <Icon className="h-[18px] w-[18px]" />
+              <span>{label}</span>
             </Link>
           )
         })}
       </nav>
-
-      {/* Bottom actions */}
       <div className="flex flex-col gap-1 pt-6">
-
-      {/* Theme toggle */}
-        <button
-          title="Toggle theme"
-          onClick={toggleTheme}
-          className="
-            flex h-11 w-11 items-center justify-center
-            rounded-lg transition
-            text-slate-600 bg-white/80 hover:bg-white
-            hover:bg-white/10 hover:text-slate-900
-          "
-        >
-          {theme === "dark" ? (
-            <Sun className="h-5 w-5" />
-          ) : (
-            <Moon className="h-5 w-5" />
-          )}
+        <button title="User profile" className="navMenus overflow-hidden">
+          <Image className="overflow-hidden object-cover" src="/images/user.webp" alt="User" width={56} height={56}/>
         </button>
-
-
-        {/* Notifications */}
-        <button
-          title="Notifications"
-          className="relative flex h-11 w-11 items-center justify-center rounded-lg text-slate-600 bg-white/80 hover:bg-white hover:text-slate-900"
-        >
-          <Bell className="h-5 w-5" />
-          <span className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500" />
-        </button>
-
-        {/* User */}
-        <button
-          title="User profile"
-          className="flex h-11 w-11 items-center justify-center rounded-lg text-slate-600 bg-white/80 hover:bg-white hover:text-slate-900"
-        >
-          <User className="h-5 w-5" />
-        </button>
-
-        {/* Logout */}
-        <button
-          title="Logout"
-          onClick={() => {
-            localStorage.removeItem("token")
-            window.location.href = "/sign-in"
-          }}
-          className="
-            flex h-11 w-11 items-center justify-center
-            rounded-lg text-red-400 bg-white/80
-            hover:bg-red-200 hover:text-red-500
-          "
-        >
+        <button title="Logout" onClick={() => { localStorage.removeItem("token"); window.location.href = "/sign-in"}} className="navMenus logoutMenu">
           <LogOut className="h-5 w-5" />
+        </button>
+      </div>
+      <div className="fixed right-5 top-3 flex flex-row gap-1 flex-1">
+        <button onClick={toggleTheme} role="switch" aria-checked={theme === "dark"} title="Toggle theme"
+          className={cn("relative h-[46px] w-[86px] rounded-[10px] transition-colors duration-300", theme === "dark" ? "bg-slate-700" : "bg-white/50")}>
+          <span className={cn("absolute top-[3px] left-[3px] h-[40px] w-[40px] rounded-[7px] bg-white dark:bg-slate-600 shadow-md transition-transform duration-300", theme === "dark" && "translate-x-[40px]")}/>
+          <Sun className="absolute left-3 top-3 h-5 w-5 text-slate-700 dark:text-yellow-400 "/>
+          <Moon className="absolute right-3 top-3 h-5 w-5 text-slate-700 dark:text-white"/>
+        </button>
+        <button title="Notifications" className="h-[46px] w-[46px] rounded-[10px] bg-white/60 hover:bg-white text-slate-500 hover:text-slate-700 flex items-center justify-center">
+          <Bell className="h-5 w-5" />
+          <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500"></div>
         </button>
       </div>
     </aside>

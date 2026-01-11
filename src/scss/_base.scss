@@ -1,4 +1,4 @@
-
+/*===============Font================*/
 @font-face {
   font-family: "Lufga";
   src: url("/fonts/LufgaThin.woff2") format("woff2");
@@ -55,7 +55,8 @@
   font-display: swap;
 }
 
-/* Apply global font */
+
+/*===============Global================*/
 html, body {
   font-family: "Lufga", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
@@ -74,4 +75,21 @@ input:-webkit-autofill {
 input:-moz-autofill {
   box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 9999s ease-in-out 0s;
+}
+
+
+/*===============Global Loader================*/
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
 }

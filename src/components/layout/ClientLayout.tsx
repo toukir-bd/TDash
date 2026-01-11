@@ -13,14 +13,16 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
 
   return (
     <ThemeProvider>
-      {!isAuthPage && <MenuBar />}
-      {isAuthPage ? (
-        <main>{children}</main>
-      ) : (
-        <ProtectWrapper>
+      <div className="flex w-full">
+        {!isAuthPage && <MenuBar/>}
+        {isAuthPage ? (
           <main>{children}</main>
-        </ProtectWrapper>
-      )}
+        ) : (
+          <ProtectWrapper>
+            <main>{children}</main>
+          </ProtectWrapper>
+        )}
+      </div>
     </ThemeProvider>
   )
 }

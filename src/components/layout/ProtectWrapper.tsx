@@ -2,23 +2,29 @@
 
 "use client"
 
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { isLoggedIn } from "@/lib/auth"
+import PageLoader from '@/components/layout/PageLoader'
 
-export default function ProtectedWrapper({ children }: { children: ReactNode }) {
+export default function ProtectedWrapper({children,}:{children:ReactNode}) {
   const router = useRouter()
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!isLoggedIn()) {
       router.replace("/sign-in")
-    } else {
-      setLoading(false)
     }
   }, [router])
 
-  if (loading) return <div className="flex items-center justify-center min-h-screen text-white">Loading...</div>
+  if (!isLoggedIn()) {
+    return (
+      <PageLoader/>
+    )
+  }
 
-  return <>{children}</>
+  return (
+    <div className="w-[calc(100%-78px)] p-10">
+      {children}
+    </div>
+  )
 }
