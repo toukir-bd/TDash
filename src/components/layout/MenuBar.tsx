@@ -63,8 +63,9 @@ export default function MenuBar() {
           <Sun className="absolute left-3 top-3 h-5 w-5 text-slate-700 dark:text-yellow-400 "/>
           <Moon className="absolute right-3 top-3 h-5 w-5 text-slate-700 dark:text-white"/>
         </button>
-        <button title="Notifications" className="h-[46px] w-[46px] rounded-[10px] bg-white/60 hover:bg-white text-slate-500 hover:text-slate-700 flex items-center justify-center">
-          <Bell className="h-5 w-5" />
+        <button title="Notifications" className="h-[46px] w-[46px] rounded-[10px] bg-white/60 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 
+         flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white">
+          <Bell className="h-5 w-5"/>
           <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500"></div>
         </button>
       </div>

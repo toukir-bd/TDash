@@ -23,7 +23,7 @@ export default function ProtectedWrapper({children,}:{children:ReactNode}) {
   }
 
   return (
-    <div className="w-[calc(100%-78px)] p-10">
+    <div className="w-[calc(100%-78px)] px-10">
       {children}
     </div>
   )
