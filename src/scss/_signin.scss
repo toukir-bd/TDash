@@ -7,5 +7,9 @@
     }
     .sign-card{
         @apply p-8 relative z-10 w-full max-w-md rounded-[20px] border shadow-xl backdrop-blur-[2px] bg-white/20 border-white/45 dark:bg-slate-900/45 dark:border-slate-500/5;
+        .btn-social{
+            @apply h-[40px] rounded-[7px] bg-white/80 border border-slate-200 hover:bg-white hover:border-slate-300 flex items-center justify-center
+            dark:bg-slate-900 dark:border-slate-800 dark:hover:bg-slate-800 dark:hover:border-slate-700;
+        }
     }
 }
