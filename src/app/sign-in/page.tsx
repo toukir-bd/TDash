@@ -40,42 +40,26 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-gradient-to-b from-[#f1e6c4] to-white dark:from-[#141404] dark:to-slate-950">
-
-      {/* Theme Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="absolute top-5 right-5 p-2 rounded-full bg-white/30 dark:bg-slate-800/40 hover:scale-105 transition"
-        aria-label="Toggle theme"
-      >
-        {theme === "dark" ? (
-          <Sun className="h-5 w-5 text-yellow-400" />
-        ) : (
-          <Moon className="h-5 w-5 text-slate-900" />
-        )}
+    <div className="sign-page">
+      <button onClick={toggleTheme} className="btn-theme" aria-label="Toggle theme">
+        {theme === "dark" ? (<Sun className="h-[18px] w-[18px] text-yellow-400"/>) : (<Moon className="h-[18px] w-[18px] text-slate-900"/>)}
       </button>
-
-      {/* Soft arcs / aura */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full border border-white/80 dark:border-white/10" />
         <div className="absolute -top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full border border-white/70 dark:border-white/5" />
       </div>
-
-      <Card className="p-8 relative z-10 w-full max-w-md rounded-[20px] border shadow-xl bg-white/20 border-white/35 backdrop-blur-[1px] dark:bg-slate-900/25 dark:border-slate-500/5">
+      <Card className="sign-card">
         <CardHeader className="text-center space-y-3 p-0 mb-3">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/5">
-            <LogIn className="h-5 w-5 text-slate-700 dark:text-slate-200" />
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[10px] bg-white/70 dark:bg-white/5">
+            <LogIn className="h-6 w-6 text-slate-700 dark:text-slate-200" />
           </div>
-
           <CardTitle className="text-4xl font-normal text-slate-700 dark:text-white">
             Sign In
           </CardTitle>
-
           <CardDescription className="text-[15px] font-[400] text-slate-700 dark:text-slate-400">
             Welcome! Please enter your details.
           </CardDescription>
         </CardHeader>
-
         <CardContent className="p-0">
           <form onSubmit={handleSubmit} className="space-y-5">
             <FloatingLabelInput
@@ -85,7 +69,6 @@ export default function SignInPage() {
               type="email"
               required
             />
-
             <FloatingLabelInput
               id="password"
               name="password"
@@ -93,12 +76,8 @@ export default function SignInPage() {
               type="password"
               required
             />
-
             <div className="text-right text-sm">
-              <button
-                type="button"
-                className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
-              >
+              <button type="button" className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
                 Forgot password?
               </button>
             </div>

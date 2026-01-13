@@ -16,7 +16,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
       <div className="flex w-full">
         {!isAuthPage && <MenuBar/>}
         {isAuthPage ? (
-          <main>{children}</main>
+          <main className="w-full">{children}</main>
         ) : (
           <ProtectWrapper>
             <main>{children}</main>

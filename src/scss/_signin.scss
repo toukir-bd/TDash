@@ -1,0 +1,11 @@
+
+
+.sign-page{
+    @apply min-h-screen w-full flex items-center justify-center px-4 overflow-hidden bg-gradient-to-b from-[#f1e6c4] to-white dark:from-[#141404] dark:to-slate-950;
+    .btn-theme{
+        @apply absolute top-5 right-5 p-[15px] rounded-[10px] bg-white/70 hover:bg-white dark:bg-slate-700/40 dark:hover:bg-slate-700/50 hover:scale-105 transition;
+    }
+    .sign-card{
+        @apply p-8 relative z-10 w-full max-w-md rounded-[20px] border shadow-xl backdrop-blur-[2px] bg-white/20 border-white/45 dark:bg-slate-900/45 dark:border-slate-500/5;
+    }
+}
