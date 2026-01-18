@@ -2,7 +2,7 @@
 .menuBar-side{
     @apply sticky top-0 h-screen w-[78px] bg-[#E4E2DE] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
     .navMenus{
-        @apply relative flex h-14 w-14 items-center justify-center rounded-[7px] transition bg-white/60 hover:bg-white dark:bg-slate-800 
+        @apply relative flex h-[46px] w-[46px] items-center justify-center rounded-[7px] transition bg-white/60 hover:bg-white dark:bg-slate-800 
         dark:hover:bg-slate-700 text-slate-500 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-200;
         span{
             @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-slate-900 opacity-0;

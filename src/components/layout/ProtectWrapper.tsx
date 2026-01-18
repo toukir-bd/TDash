@@ -23,7 +23,11 @@ export default function ProtectedWrapper({children,}:{children:ReactNode}) {
   }
 
   return (
-    <div className="w-[calc(100%-78px)] px-10">
+    <div className="w-[calc(100%-78px)] px-10 dark:from-slate-900 dark:to-slate-800">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full blur-[80px] border-[120px] border-[#f7c4a6]/65 dark:border-[#725a3d]/65 opacity-50" />
+        <div className="absolute -top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full blur-[80px] border-[80px] border-[#dc74ff]/65 dark:border-[#5a3568]/65 opacity-50" />
+      </div>
       {children}
     </div>
   )

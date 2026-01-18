@@ -42,7 +42,7 @@ export default function MenuBar() {
           const isActive = pathname === href
           return (
             <Link key={href} href={href} title={label} className={cn('navMenus', isActive ? "active" : "")}>
-              <Icon className="h-[18px] w-[18px]" />
+              <Icon className="h-[16px] w-[16px]" />
               <span>{label}</span>
             </Link>
           )

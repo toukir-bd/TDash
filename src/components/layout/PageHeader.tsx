@@ -20,7 +20,7 @@ export default function PageHeader({ description }: { description?: string }) {
 
     return (
         <header className="flex flex-col gap-2 sticky top-0">
-            <div className="flex items-center justify-start flex-wrap gap-4 p-3 rounded-[10px]">
+            <div className="flex items-center justify-start w-[calc(100%-135px)] flex-wrap gap-4 p-3 rounded-[10px]">
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
                     {segments.length ? titleCase(segments[segments.length - 1]) : "Dashboard"}
                 </h1>
