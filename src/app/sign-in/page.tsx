@@ -45,8 +45,8 @@ export default function SignInPage() {
         {theme === "dark" ? (<Sun className="h-[18px] w-[18px] text-yellow-400"/>) : (<Moon className="h-[18px] w-[18px] text-slate-900"/>)}
       </button>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full border border-white/80 dark:border-white/10" />
-        <div className="absolute -top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full border border-white/70 dark:border-white/5" />
+        <div className="absolute -top-1/2 left-1/2 h-[800px] w-[800px] -translate-x-1/2 rounded-full blur-[80px] border-[120px] border-[#f7c4a6] dark:border-[#725a3d] opacity-50" />
+        <div className="absolute -top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full blur-[80px] border-[80px] border-[#dc74ff] dark:border-[#5a3568] opacity-50" />
       </div>
       <Card className="sign-card">
         <CardHeader className="text-center space-y-3 p-0 mb-3">
