@@ -13,7 +13,7 @@ const options: LineChartOptions = {
       color: '#2563eb',
       anchor: 'end',
       align: 'top',
-      font: { weight: '600' },
+      font: { weight: 600 },
       formatter: (value: number) => value,
     },
   },

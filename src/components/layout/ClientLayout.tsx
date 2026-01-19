@@ -1,5 +1,6 @@
 "use client"
 
+import '@/lib/chart'
 import { ReactNode } from "react"
 import { usePathname } from "next/navigation"
 import MenuBar from "@/components/layout/MenuBar"

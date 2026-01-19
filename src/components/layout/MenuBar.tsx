@@ -7,6 +7,11 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { useTheme } from "@/hooks/useTheme"
 import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group"
+import {
   LayoutDashboard,
   Bell,
   Settings,
@@ -16,7 +21,8 @@ import {
   Briefcase,
   Users, 
   Sun, 
-  Moon
+  Moon,
+  SearchIcon
 } from "lucide-react"
 
 const navItems = [
@@ -56,7 +62,13 @@ export default function MenuBar() {
           <LogOut className="h-5 w-5" />
         </button>
       </div>
-      <div className="fixed right-5 top-3 flex flex-row gap-1 flex-1">
+      <div className="fixed right-5 top-3 flex gap-1 z-20">
+        <InputGroup className="w-[300px] h-[46px] bg-white/60 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 border-0 rounded-[10px]">
+          <InputGroupInput className="w-full" placeholder="Search..." />
+          <InputGroupAddon>
+            <SearchIcon />
+          </InputGroupAddon>
+        </InputGroup>
         <button onClick={toggleTheme} role="switch" aria-checked={theme === "dark"} title="Toggle theme"
           className={cn("relative h-[46px] w-[86px] rounded-[10px] transition-colors duration-300", theme === "dark" ? "bg-slate-700" : "bg-white/50")}>
           <span className={cn("absolute top-[3px] left-[3px] h-[40px] w-[40px] rounded-[7px] bg-white dark:bg-slate-600 shadow-md transition-transform duration-300", theme === "dark" && "translate-x-[40px]")}/>

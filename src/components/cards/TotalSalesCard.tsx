@@ -2,7 +2,7 @@
 import { ReactNode } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Bar } from "react-chartjs-2"
-import type { BarChartOptions } from "@/lib/chart"
+import type { BarChartOptions } from '@/lib/chart'
 
 const options: BarChartOptions = {
   responsive: true,
@@ -12,15 +12,24 @@ const options: BarChartOptions = {
       color: '#fff',
       anchor: 'end',
       align: 'top',
-      font: { weight: '600', size: 12 },
-      formatter: (value: number) => value,
+      font: { weight: 600, size: 12 },
+      formatter: (value: number, context) => {
+        const label = context.chart.data.labels?.[context.dataIndex] ?? '';
+        return `${value}%\n${label}`;
+      },
     },
   },
   scales: {
-    x: { grid: { display: false }, ticks: { color: '#fff' } },
-    y: { display: false },
+    x: {
+      grid: { display: false },
+      ticks: { color: '#fff' },
+    },
+    y: {
+      display: false,
+    },
   },
 }
+
 
 
 export default function TotalSalesCard(): ReactNode {

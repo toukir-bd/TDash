@@ -19,7 +19,7 @@ export default function PageHeader({ description }: { description?: string }) {
     const segments = segmentsFromPath(pathname)
 
     return (
-        <header className="flex flex-col gap-2 sticky top-0 w-[calc(100%-135px)] ">
+        <header className="flex flex-col gap-2 fixed top-0 w-full -z-10 h-[70px]">
             <div className="flex items-center justify-start flex-wrap gap-4 p-3 rounded-[10px]">
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
                     {segments.length ? titleCase(segments[segments.length - 1]) : "Dashboard"}
@@ -48,11 +48,6 @@ export default function PageHeader({ description }: { description?: string }) {
                     })}
                 </nav>
             </div>
-            {description && (
-                <p className="max-w-3xl text-slate-600 dark:text-slate-400">
-                    {description}
-                </p>
-            )}
         </header>
     )
 }
