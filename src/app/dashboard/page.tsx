@@ -1,27 +1,24 @@
 
-
-
+import { ReactNode } from "react"
 import PageHeader from "@/components/layout/PageHeader"
+import TotalSalesCard from "@/components/cards/TotalSalesCard"
+import MedicinesStockCard from "@/components/cards/MedicinesStockCard"
+import CustomersCard from "@/components/cards/CustomersCard"
+import InventoryItemCard from "@/components/cards/InventoryItemCard"
 
-export default function DashboardPage() {
+export default function DashboardPage(): ReactNode {
   return (
-    <div className="min-h-screen space-y-8 bg-[#E4E2DE] dark:bg-slate-950">
-      <PageHeader description="Welcome to your dashboard. Here you can see quick stats and navigate to other sections."/>
+    <div className="min-h-screen text-gray-900 dark:text-gray-100">
+      <PageHeader />
 
-      {/* Example cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="p-4 bg-white/30 dark:bg-slate-800 rounded-[30px] min-h-[2000px]">
-          <h2 className="text-lg font-semibold text-white">Users</h2>
-          <p className="text-slate-400">Manage all your users</p>
+      <div className="grid grid-cols-3 gap-2">
+        <div className="col-span-2 grid grid-cols-2 gap-2">
+          <TotalSalesCard />
+          <MedicinesStockCard />
+          <CustomersCard />
         </div>
-        <div className="p-4 bg-white/30 dark:bg-slate-800 rounded-[30px]">
-          <h2 className="text-lg font-semibold text-white">Branches</h2>
-          <p className="text-slate-400">View branch details</p>
-        </div>
-        <div className="p-4 bg-white/30 dark:bg-slate-800 rounded-[30px]">
-          <h2 className="text-lg font-semibold text-white">Doctors</h2>
-          <p className="text-slate-400">Manage doctor profiles</p>
-        </div>
+
+        <InventoryItemCard />
       </div>
     </div>
   )
