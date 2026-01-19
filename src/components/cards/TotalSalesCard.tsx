@@ -2,9 +2,9 @@
 import { ReactNode } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Bar } from "react-chartjs-2"
-import type { ChartOptions } from 'chart.js'
+import type { BarChartOptions } from "@/lib/chart"
 
-const options: ChartOptions<'bar'> = {
+const options: BarChartOptions = {
   responsive: true,
   plugins: {
     legend: { display: false },

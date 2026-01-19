@@ -10,9 +10,9 @@ const options: LineChartOptions = {
   plugins: {
     legend: { display: false },
     datalabels: {
-      align: 'top',
-      anchor: 'end',
       color: '#2563eb',
+      anchor: 'end',
+      align: 'top',
       font: { weight: '600' },
       formatter: (value: number) => value,
     },
@@ -26,6 +26,7 @@ const options: LineChartOptions = {
     y: { display: false },
   },
 }
+
 
 export default function MedicinesStockCard(): ReactNode {
   return (
