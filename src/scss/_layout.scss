@@ -1,14 +1,14 @@
 
 .menuBar-side{
-    @apply sticky top-0 h-screen w-[78px] bg-[#E4E2DE] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
+    @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#E4E2DE] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
     .navMenus{
-        @apply relative flex h-[46px] w-[46px] items-center justify-center rounded-[7px] transition bg-white/80 hover:bg-white dark:bg-slate-700 
-        dark:hover:bg-slate-600 text-slate-500 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-200;
+        @apply relative flex h-[48px] w-[48px] items-center justify-center rounded-[7px] transition bg-white/80 hover:bg-white dark:bg-slate-700 
+        dark:hover:bg-slate-600 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100;
         span{
             @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-slate-900 opacity-0;
         }
         &.active{
-            @apply text-white hover:text-white bg-slate-800 hover:bg-slate-900 dark:bg-white/80 dark:hover:bg-white dark:text-slate-700;
+            @apply text-white hover:text-white bg-slate-800 hover:bg-slate-900 dark:bg-white/90 dark:hover:bg-white dark:text-slate-700;
         }
         &:hover span{
             @apply opacity-100;
@@ -16,5 +16,12 @@
         &.logoutMenu{
             @apply bg-red-300 text-red-700 hover:bg-red-600 hover:text-white dark:bg-red-500/20 dark:text-red-700 dark:hover:bg-red-600 dark:hover:text-white;
         }
+    }
+}
+
+.searchInput{
+    @apply w-full text-slate-900 dark:text-white;
+    &::placeholder{
+        @apply flex !text-slate-400;
     }
 }
