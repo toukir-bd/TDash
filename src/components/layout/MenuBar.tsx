@@ -24,6 +24,7 @@ import {
   Moon,
   SearchIcon
 } from "lucide-react"
+import PageHeader from "./PageHeader"
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -62,24 +63,27 @@ export default function MenuBar() {
           <LogOut className="h-5 w-5" />
         </button>
       </div>
-      <div className="fixed right-5 top-3 flex gap-1 z-20">
-        <InputGroup className="w-[300px] h-[46px] bg-white/60 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 border-0 rounded-[10px]">
-          <InputGroupInput className="w-full" placeholder="Search..." />
-          <InputGroupAddon>
-            <SearchIcon />
-          </InputGroupAddon>
-        </InputGroup>
-        <button onClick={toggleTheme} role="switch" aria-checked={theme === "dark"} title="Toggle theme"
-          className={cn("relative h-[46px] w-[86px] rounded-[10px] transition-colors duration-300", theme === "dark" ? "bg-slate-700" : "bg-white/50")}>
-          <span className={cn("absolute top-[3px] left-[3px] h-[40px] w-[40px] rounded-[7px] bg-white dark:bg-slate-600 shadow-md transition-transform duration-300", theme === "dark" && "translate-x-[40px]")}/>
-          <Sun className="absolute left-3 top-3 h-5 w-5 text-slate-700 dark:text-yellow-400 "/>
-          <Moon className="absolute right-3 top-3 h-5 w-5 text-slate-700 dark:text-white"/>
-        </button>
-        <button title="Notifications" className="h-[46px] w-[46px] rounded-[10px] bg-white/60 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 
-         flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white">
-          <Bell className="h-5 w-5"/>
-          <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500"></div>
-        </button>
+      <div className="fixed right-0 top-0 flex justify-between gap-1 z-20 w-full p-5 ps-[120px]">
+        <PageHeader/>
+        <div className="flex gap-1">
+          <InputGroup className="w-[300px] h-[46px] bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 border-0 rounded-[10px]">
+            <InputGroupInput className="w-full text-slate-600 dark:text-white" placeholder="Search..." />
+            <InputGroupAddon>
+              <SearchIcon className="text-slate-900 dark:text-white/80 w-8 h-8" />
+            </InputGroupAddon>
+          </InputGroup>
+          <button onClick={toggleTheme} role="switch" aria-checked={theme === "dark"} title="Toggle theme"
+            className={cn("relative h-[46px] w-[86px] rounded-[10px] transition-colors duration-300", theme === "dark" ? "bg-slate-700" : "bg-white/50")}>
+            <span className={cn("absolute top-[3px] left-[3px] h-[40px] w-[40px] rounded-[7px] bg-white dark:bg-slate-600 shadow-md transition-transform duration-300", theme === "dark" && "translate-x-[40px]")}/>
+            <Sun className="absolute left-3 top-3 h-5 w-5 text-slate-700 dark:text-yellow-400 "/>
+            <Moon className="absolute right-3 top-3 h-5 w-5 text-slate-700 dark:text-white"/>
+          </button>
+          <button title="Notifications" className="relative h-[46px] w-[46px] rounded-[10px] bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 
+          flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-slate-500 dark:hover:text-white">
+            <Bell className="h-5 w-5"/>
+            <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500"></div>
+          </button>
+        </div>
       </div>
     </aside>
   )

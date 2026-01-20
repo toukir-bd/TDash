@@ -24,6 +24,5 @@ ChartJS.register(
   ChartDataLabels
 )
 
-// ✅ TYPE EXPORT (THIS is what you’re missing)
 export type BarChartOptions = ChartOptions<'bar'>
 export type LineChartOptions = ChartOptions<'line'>

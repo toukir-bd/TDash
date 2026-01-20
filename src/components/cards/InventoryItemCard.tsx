@@ -11,7 +11,7 @@ export default function InventoryItemCard(): ReactNode {
       <CardContent className="flex gap-6 p-6">
         <div className="relative h-40 w-28">
           <Image
-            src="/amoxicillin.png"
+            src=""
             alt="Amoxicillin"
             fill
             priority

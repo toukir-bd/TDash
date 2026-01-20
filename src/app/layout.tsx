@@ -2,7 +2,17 @@
 // src/app/layout.tsx
 import "./globals.scss"
 import { ReactNode } from "react"
+import type { Metadata } from 'next'
 import ClientLayout from "@/components/layout/ClientLayout"
+
+
+export function generateMetadata({ params }: { params: { slug?: string[] }
+}): Metadata {
+  const page = params?.slug?.[0] ?.replace(/-/g, ' ') ?.replace(/\b\w/g, c => c.toUpperCase()) ?? 'Dashboard'
+  return {
+    title: `TDASH | ${page}`,
+  }
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
