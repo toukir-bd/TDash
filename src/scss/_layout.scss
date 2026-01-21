@@ -1,9 +1,9 @@
 
 .menuBar-side{
-    @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#E4E2DE] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
+    @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#ece9ec] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
     .navMenus{
-        @apply relative flex h-[42px] w-[42px] items-center justify-center rounded-[7px] transition bg-white/80 hover:bg-white dark:bg-slate-700 
-        dark:hover:bg-slate-600 text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100;
+        @apply relative flex h-[42px] w-[42px] items-center justify-center rounded-[10px] transition bg-white/80 hover:bg-white dark:bg-slate-700 
+        dark:hover:bg-slate-600 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100;
         span{
             @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-slate-900 opacity-0;
         }
@@ -20,8 +20,8 @@
 }
 
 .searchInput{
-    @apply w-full text-slate-900 !text-xs font-[500] !px-2 dark:text-white;
+    @apply w-full text-slate-900 !text-sm font-[400] !px-2 dark:text-white;
     &::placeholder{
-        @apply flex !text-slate-500;
+        @apply flex !text-[#727272];
     }
 }
