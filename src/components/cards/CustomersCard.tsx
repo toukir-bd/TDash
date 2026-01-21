@@ -7,7 +7,8 @@ import { Star } from "lucide-react"
 
 export default function CustomersCard(): ReactNode {
   return (
-    <Card className="col-span-2 h-[1500px] rounded-3xl bg-white dark:bg-neutral-900 dark:border-neutral-800">
+    <Card className="col-span-2 h-[1500px] rounded-[10px] bg-white/35 ark:bg-neutral-900 text-white border-0 overflow-hidden
+    ">
       <CardContent className="flex items-center justify-between p-6">
         <div>
           <h3 className="text-lg font-semibold">Top Customers</h3>

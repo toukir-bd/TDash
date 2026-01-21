@@ -1,56 +1,62 @@
 'use client'
 
-import { ReactNode } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Line } from "react-chartjs-2"
-import type { LineChartOptions } from "@/lib/chart"
+import { Card, CardContent } from "@/components/ui/card"
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
+import { Icon } from '@iconify/react'
 
-const options: LineChartOptions = {
-  responsive: true,
-  plugins: {
-    legend: { display: false },
-    datalabels: {
-      color: '#2563eb',
-      anchor: 'end',
-      align: 'top',
-      font: { weight: 600 },
-      formatter: (value: number) => value,
-    },
-  },
-  elements: {
-    line: { tension: 0.4, borderWidth: 3 },
-    point: { radius: 4 },
-  },
-  scales: {
-    x: { grid: { display: false } },
-    y: { display: false },
-  },
-}
+const data = [
+  { day: 'Mon', value: 30 },
+  { day: 'Tue', value: 65 },
+  { day: 'Wed', value: 80 },
+  { day: 'Thu', value: 55 },
+  { day: 'Fri', value: 45 },
+]
 
-
-export default function MedicinesStockCard(): ReactNode {
+export default function MedicinesStockCard() {
   return (
-    <Card className="rounded-3xl bg-white dark:bg-neutral-900 dark:border-neutral-800">
-      <CardHeader>
-        <CardTitle>Medicines in Stock</CardTitle>
-        <p className="text-sm text-gray-500 dark:text-gray-400">2,847</p>
-      </CardHeader>
+    <Card className="relative h-[380px] rounded-[10px] bg-white/35 text-white border-0 overflow-hidden">
+      <div className="flex justify-between px-6 pt-6">
+        <div>
+          <h3 className="mainHead">Stock Products</h3>
+          <h2 className="headValue">42450</h2>
+        </div>
+        <button className="h-12 w-12 rounded-[10px] bg-white/75 hover:bg-white/40 flex items-center justify-center">
+          <Icon icon="tabler:dots" className="text-xl text-slate-700" />
+        </button>
+      </div>
 
-      <CardContent>
-        <Line
-          options={options}
-          data={{
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-            datasets: [
-              {
-                data: [30, 65, 80, 55, 45],
-                borderColor: '#2563eb',
-                backgroundColor: 'rgba(37,99,235,0.15)',
-                fill: true,
-              },
-            ],
-          }}
-        />
+      <CardContent className="h-40">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data}>
+            {/* X Axis */}
+            <XAxis
+              dataKey="day"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: '#6B7280', fontSize: 12 }}
+            />
+
+            {/* Y Axis */}
+            <YAxis hide />
+
+            {/* Tooltip */}
+            <Tooltip
+              contentStyle={{ backgroundColor: 'white', borderRadius: 8, border: 'none' }}
+              labelStyle={{ fontWeight: 600 }}
+            />
+
+            {/* Line */}
+            <Line
+              type="monotone"
+              dataKey="value"
+              stroke="#2563eb"
+              strokeWidth={3}
+              dot={{ r: 4, fill: '#2563eb' }}
+              activeDot={{ r: 6 }}
+              fill="rgba(37,99,235,0.15)"
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </CardContent>
     </Card>
   )

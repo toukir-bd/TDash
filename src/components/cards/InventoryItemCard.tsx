@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function InventoryItemCard(): ReactNode {
   return (
-    <Card className="rounded-3xl bg-white dark:bg-neutral-900 dark:border-neutral-800">
+    <Card className="relative rounded-[10px] bg-white/35 text-white border-0 overflow-hidden">
       <CardContent className="flex gap-6 p-6">
         <div className="relative h-40 w-28">
           <Image
