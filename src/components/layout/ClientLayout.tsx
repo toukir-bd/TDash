@@ -3,6 +3,7 @@
 import { ReactNode } from "react"
 import { usePathname } from "next/navigation"
 import MenuBar from "@/components/layout/MenuBar"
+import NavBar from "@/components/layout/NavBar"
 import ProtectWrapper from "@/components/layout/ProtectWrapper"
 import ThemeProvider from "@/components/layout/ThemeProvider"
 
@@ -19,6 +20,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
           <main className="w-full">{children}</main>
         ) : (
           <ProtectWrapper>
+            <NavBar/>
             <main>{children}</main>
           </ProtectWrapper>
         )}

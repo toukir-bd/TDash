@@ -27,11 +27,11 @@
 }
 
 .mainHead{
-    @apply text-[13px] font-[700] text-black/50 dark:text-white/70 uppercase tracking-wider;
+    @apply text-[12px] font-[700] text-black/50 dark:text-white/70 uppercase tracking-wider;
 }
 
 .headValue{
-    @apply text-[33px] font-[400] text-slate-900 dark:text-white;
+    @apply text-[29px] font-[500] text-slate-900 dark:text-white;
 }
 .totalSales{
     .recharts-wrapper{
