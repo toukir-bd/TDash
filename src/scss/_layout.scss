@@ -18,23 +18,31 @@
         }
     }
 }
-
-.searchInput{
-    @apply w-full text-slate-900 !text-sm font-[400] !px-2 dark:text-white;
-    &::placeholder{
-        @apply flex !text-[#727272];
+.searchBar{
+    @apply bg-white/80 hover:bg-white !w-[300px] !h-[42px] border-none dark:border-slate-700 !rounded-[10px];
+    .iconify{
+        @apply text-slate-800 dark:text-white ms-2;
+    }
+    .searchInput{
+        @apply w-full text-slate-900 !text-[13px] font-[500] !px-2 dark:text-white;
+        &::placeholder{
+            @apply flex !text-black/40;
+        }
     }
 }
-
-.mainHead{
-    @apply text-[12px] font-[700] text-black/50 dark:text-white/70 uppercase tracking-wider;
+.themeButton{
+    @apply relative h-[42px] w-[84px] rounded-[10px] transition-colors duration-300 bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600;
+    .buttonKit{
+        @apply absolute top-[4px] left-[4px] h-[34px] w-[34px] rounded-[7px] bg-slate-700 dark:bg-white/80 transition-transform duration-300;
+    }
 }
-
-.headValue{
-    @apply text-[29px] font-[500] text-slate-900 dark:text-white;
-}
-.totalSales{
-    .recharts-wrapper{
-        @apply relative !h-[400px];
+.remindButton{
+    @apply relative h-[42px] w-[42px] rounded-[10px] bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 
+          flex items-center justify-center text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white;
+    .notifyDot{
+        @apply absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500;
+    }
+    .messageDot{
+        @apply absolute top-2 right-2 h-2 w-2 rounded-full bg-teal-600;
     }
 }

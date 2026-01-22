@@ -4,10 +4,20 @@
 import { ReactNode } from "react"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import { Icon } from '@iconify/react'
 
 export default function InventoryItemCard(): ReactNode {
   return (
-    <Card className="relative rounded-[10px] bg-white/35 text-white border-0 overflow-hidden">
+    <Card className="cardBox">
+      <div className="flex justify-between">
+        <div>
+          <h3 className="mainHead">Total Sales</h3>
+          <h2 className="headValue">$12450.00</h2>
+        </div>
+        <button className="boxButton">
+          <Icon icon="tabler:dots" className="text-xl text-slate-700" />
+        </button>
+      </div>
       <CardContent className="flex gap-6 p-6">
         <div className="relative h-40 w-28">
           <Image

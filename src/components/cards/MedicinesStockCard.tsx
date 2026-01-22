@@ -14,13 +14,13 @@ const data = [
 
 export default function MedicinesStockCard() {
   return (
-    <Card className="relative h-[380px] rounded-[10px] bg-white/35 text-white border-0 overflow-hidden">
-      <div className="flex justify-between px-6 pt-6">
+    <Card className="cardBox">
+      <div className="flex justify-between">
         <div>
           <h3 className="mainHead">Stock Products</h3>
           <h2 className="headValue">42450</h2>
         </div>
-        <button className="h-12 w-12 rounded-[10px] bg-white/75 hover:bg-white/40 flex items-center justify-center">
+        <button className="boxButton">
           <Icon icon="tabler:dots" className="text-xl text-slate-700" />
         </button>
       </div>

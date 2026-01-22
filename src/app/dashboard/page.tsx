@@ -7,8 +7,8 @@ import InventoryItemCard from "@/components/cards/InventoryItemCard"
 
 export default function DashboardPage(): ReactNode {
   return (
-    <div className="grid grid-cols-3 gap-[10px]">
-      <div className="col-span-2 grid grid-cols-2 gap-[10px]">
+    <div className="grid grid-cols-3 gap-[5px]">
+      <div className="col-span-2 grid grid-cols-2 gap-[5px]">
         <TotalSalesCard />
         <MedicinesStockCard />
         <CustomersCard/>
