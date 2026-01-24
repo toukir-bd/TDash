@@ -1,19 +1,19 @@
 
 import { ReactNode } from "react"
-import TotalSalesCard from "@/components/cards/TotalSalesCard"
-import MedicinesStockCard from "@/components/cards/MedicinesStockCard"
+import TotalSales from "@/components/cards/TotalSales"
+import StockProducts from "@/components/cards/StockProducts"
 import CustomersCard from "@/components/cards/CustomersCard"
-import InventoryItemCard from "@/components/cards/InventoryItemCard"
+import InventoryItem from "@/components/cards/InventoryItem"
 
 export default function DashboardPage(): ReactNode {
   return (
     <div className="grid grid-cols-3 gap-[5px]">
       <div className="col-span-2 grid grid-cols-2 gap-[5px]">
-        <TotalSalesCard />
-        <MedicinesStockCard />
+        <TotalSales/>
+        <StockProducts/>
         <CustomersCard/>
       </div>
-      <InventoryItemCard />
+      <InventoryItem/>
     </div>
   )
 }

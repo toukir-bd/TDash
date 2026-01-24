@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Icon } from '@iconify/react'
 
-export default function InventoryItemCard(): ReactNode {
+export default function InventoryItem(): ReactNode {
   return (
     <Card className="cardBox">
       <div className="flex justify-between">
@@ -20,13 +20,13 @@ export default function InventoryItemCard(): ReactNode {
       </div>
       <CardContent className="flex gap-6 p-6">
         <div className="relative h-40 w-28">
-          <Image
+          {/* <Image
             src=""
             alt="Amoxicillin"
             fill
             priority
             className="object-contain"
-          />
+          /> */}
         </div>
 
         <div className="flex-1">

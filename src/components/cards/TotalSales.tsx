@@ -76,7 +76,7 @@ const CustomLabel = (props: LabelProps) => {
 
 
 
-export default function TotalSalesCard() {
+export default function TotalSales() {
   return (
     <Card className="cardBox bg-blue-600">
       <div className="flex justify-between">
