@@ -20,7 +20,7 @@ export default function PageHeader() {
 
     return (
         <header className="flex items-center">
-            <span className="text-[23px] font-[700] text-slate-800 dark:text-white">
+            <span className="text-[25px] font-[700] text-gray-950 dark:text-white">
                 {segments.length ? titleCase(segments[segments.length - 1]) : "Dashboard"}
             </span>
             <nav className="flex items-center text-sm ms-4 relative">

@@ -1,8 +1,8 @@
 
 .menuBar-side{
-    @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#f2f2f2] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-slate-900;
+    @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#E6E9F9] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-gray-950;
     .navMenus{
-        @apply relative flex h-[48px] w-[48px] items-center justify-center rounded-[10px] transition bg-white hover:bg-white dark:bg-slate-700 
+        @apply relative flex h-[48px] w-[48px] items-center justify-center rounded-[15px] transition bg-white hover:bg-white dark:bg-slate-700 
         dark:hover:bg-slate-600 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100;
         span{
             @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-slate-900 opacity-0;
@@ -19,7 +19,7 @@
     }
 }
 .searchBar{
-    @apply bg-white/80 hover:bg-white !w-[300px] !h-[42px] border-none dark:border-slate-700 !rounded-[10px];
+    @apply bg-white hover:bg-white !w-[300px] !h-[42px] border-none dark:border-slate-700 !rounded-[10px];
     .iconify{
         @apply text-slate-800 dark:text-white ms-2;
     }
