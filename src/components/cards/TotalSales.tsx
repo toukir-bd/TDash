@@ -78,14 +78,14 @@ const CustomLabel = (props: LabelProps) => {
 
 export default function TotalSales() {
   return (
-    <Card className="cardBox bg-blue-600">
+    <Card className="cardBox">
       <div className="flex justify-between">
         <div>
-          <h3 className="mainHead !text-white/65">Total Sales</h3>
-          <h2 className="headValue !text-white">$12450.00</h2>
+          <h3 className="mainHead">Total Sales</h3>
+          <h2 className="headValue">$12450.00</h2>
         </div>
-        <button className="boxButton !bg-white/15">
-          <Icon icon="tabler:dots" className="text-xl text-white" />
+        <button className="boxButton">
+          <Icon icon="tabler:dots" className="text-xl" />
         </button>
       </div>
       <div className="totalSales absolute inset-x-0  bottom-0 h-[300px] px-4 min-h-[0]">
