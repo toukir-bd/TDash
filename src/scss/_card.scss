@@ -1,6 +1,6 @@
 
 .cardBox{
-    @apply relative h-[380px] !rounded-[17px] !border-0 overflow-hidden p-6 bg-white dark:bg-black/90;
+    @apply relative h-[380px] !rounded-[17px] !border-0 overflow-hidden p-6 bg-white/45 dark:bg-black/90;
     .boxButton{
         @apply relative -top-[10px] -right-[10px] h-12 w-12 rounded-[10px] bg-white/45 hover:bg-white/65 flex items-center justify-center;
     }

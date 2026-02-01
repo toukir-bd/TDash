@@ -93,18 +93,18 @@ export default function TotalSales() {
           <BarChart data={data} barCategoryGap="2%">
             <defs>
               <linearGradient id="solid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#ffffff" />
+                <stop offset="0%" stopColor="#1f1f1f" />
+                <stop offset="100%" stopColor="#1f1f1f" />
               </linearGradient>
               <pattern id="dots" width="4" height="4" patternUnits="userSpaceOnUse">
-                <circle cx=".5" cy=".5" r="1" fill="white" />
+                <circle cx=".5" cy=".5" r="1" fill="#1f1f1f" />
               </pattern>
               <pattern id="stripes" width="7" height="7" patternUnits="userSpaceOnUse">
-                <path d="M0 7 L7 0" stroke="white" strokeWidth="1" />
+                <path d="M0 7 L7 0" stroke="#1f1f1f" strokeWidth="1" />
               </pattern>
               <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+                <stop offset="0%" stopColor="#1f1f1f" />
+                <stop offset="100%" stopColor="rgba(0,0,0,0)" />
               </linearGradient>
             </defs>
             <XAxis
