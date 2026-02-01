@@ -2,13 +2,13 @@
 .menuBar-side{
     @apply sticky top-0 left-0 z-30 h-screen w-[78px] bg-[#E6E9F9] text-slate-200 border-0 flex flex-col items-center py-6 dark:bg-gray-950;
     .navMenus{
-        @apply relative flex h-[48px] w-[48px] items-center justify-center rounded-[15px] transition bg-white hover:bg-white dark:bg-slate-700 
-        dark:hover:bg-slate-600 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100;
+        @apply relative flex h-[48px] w-[48px] items-center justify-center rounded-[15px] transition bg-white hover:bg-white dark:bg-gray-800 
+        dark:hover:bg-gray-800 text-gray-500 hover:text-gray-950 dark:text-gray-500 dark:hover:text-white;
         span{
-            @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-slate-900 opacity-0;
+            @apply pointer-events-none absolute left-14 whitespace-nowrap rounded-md px-2 py-1 text-[14px] text-gray-950 opacity-0;
         }
         &.active{
-            @apply text-white hover:text-white bg-slate-800 hover:bg-slate-900 dark:bg-white/90 dark:hover:bg-white dark:text-slate-700;
+            @apply text-white hover:text-white bg-gray-800 hover:bg-gray-950 dark:bg-white dark:hover:bg-white dark:text-gray-950;
         }
         &:hover span{
             @apply opacity-100;
@@ -19,26 +19,26 @@
     }
 }
 .searchBar{
-    @apply bg-white hover:bg-white !w-[300px] !h-[42px] border-none dark:border-slate-700 !rounded-[10px];
+    @apply bg-white hover:bg-white dark:bg-gray-800 !w-[300px] !h-[42px] border-none dark:border-slate-700 !rounded-[15px];
     .iconify{
-        @apply text-slate-800 dark:text-white ms-2;
+        @apply text-gray-500 dark:text-gray-500 ms-2;
     }
     .searchInput{
-        @apply w-full text-slate-900 !text-[13px] font-[500] !px-2 dark:text-white;
+        @apply w-full text-gray-950 !text-[13px] font-[500] !px-2 dark:text-white;
         &::placeholder{
-            @apply flex !text-black/40;
+            @apply flex !text-gray-400 dark:!text-gray-600;
         }
     }
 }
 .themeButton{
-    @apply relative h-[42px] w-[84px] rounded-[10px] transition-colors duration-300 bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600;
+    @apply relative h-[42px] w-[84px] rounded-[14px] transition-colors duration-300 bg-white hover:bg-white dark:bg-gray-800;
     .buttonKit{
-        @apply absolute top-[4px] left-[4px] h-[34px] w-[34px] rounded-[7px] bg-slate-700 dark:bg-white/80 transition-transform duration-300;
+        @apply absolute top-[4px] left-[4px] h-[34px] w-[34px] rounded-[11px] bg-gray-800 dark:bg-white transition-transform duration-300;
     }
 }
 .remindButton{
-    @apply relative h-[42px] w-[42px] rounded-[10px] bg-white/80 hover:bg-white dark:bg-slate-700 dark:hover:bg-slate-600 
-          flex items-center justify-center text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white;
+    @apply relative h-[42px] w-[42px] rounded-[14px] bg-white hover:bg-white dark:bg-gray-800
+          flex items-center justify-center text-gray-500 hover:text-slate-950 dark:text-gray-500 dark:hover:text-white;
     .notifyDot{
         @apply absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500;
     }

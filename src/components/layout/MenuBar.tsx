@@ -22,7 +22,7 @@ export default function MenuBar() {
   return (
     <aside>
       <div className="menuBar-side">
-        <div className="mb-8 text-lg font-bold text-white">
+        <div className="mb-8 text-3xl font-bold">
           ⚡
         </div>
         <nav className="flex flex-col gap-1 flex-1">

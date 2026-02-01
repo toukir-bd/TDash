@@ -20,7 +20,7 @@ export default function PageHeader() {
 
     return (
         <header className="flex items-center">
-            <span className="text-[25px] font-[700] text-gray-950 dark:text-white">
+            <span className="text-[29px] font-[600] text-gray-950 dark:text-white tracking-tight">
                 {segments.length ? titleCase(segments[segments.length - 1]) : "Dashboard"}
             </span>
             <nav className="flex items-center text-sm ms-4 relative">
@@ -37,7 +37,7 @@ export default function PageHeader() {
                                     {titleCase(segment)}
                                 </span>
                             ) : (
-                                <Link href={href} className="hover:text-slate-900 dark:hover:text-white transition">
+                                <Link href={href} className="hover:text-gray-950 dark:hover:text-white transition">
                                     {titleCase(segment)}
                                 </Link>
                             )}
