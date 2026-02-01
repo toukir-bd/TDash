@@ -2,7 +2,7 @@
 'use client'
 
 import { ReactNode } from "react"
-import Image from "next/image"
+// import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Icon } from '@iconify/react'
 
