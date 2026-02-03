@@ -21,7 +21,7 @@ export default function NavBar() {
                 <button onClick={toggleTheme} role="switch" aria-checked={theme === "dark"} title="Toggle theme" className="themeButton">
                     <span className={cn("buttonKit", theme === "dark" && "translate-x-[42px]")} />
                     <Icon icon="grommet-icons:sun" className="absolute left-[13px] top-[13px] h-4 w-4 text-white dark:text-yellow-400 " />
-                    <Icon icon="bi:moon-stars" className="absolute right-[13px] top-[13px] h-4 w-4 text-slate-700 dark:text-slate-800" />
+                    <Icon icon="bi:moon-stars" className="absolute right-[13px] top-[13px] h-4 w-4 text-gray-500 hover:text-gray-800 dark:text-slate-800" />
                 </button>
                 <button title="Notifications" className="remindButton">
                     <Icon icon="si:notifications-thick-line" className="h-[18px] w-[18px]" />

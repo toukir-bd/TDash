@@ -47,6 +47,8 @@ const CustomLabel = (props: LabelProps) => {
   const day = data[index].name
   const valueOffset = 30 // distance above bar for value
   const dayOffset = 20  // distance from value to day
+  const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark")
+
 
   return (
     <g>
@@ -54,9 +56,9 @@ const CustomLabel = (props: LabelProps) => {
         x={numericX}
         y={numericY - valueOffset}
         textAnchor="middle"
-        fill="#fff"
+        fill={isDark ? '#e9e9e9' : '#374151'}
         fontSize={19}
-        fontWeight={400}
+        fontWeight={600}
       >
         {`${numericValue}%`}
       </text>
@@ -64,7 +66,7 @@ const CustomLabel = (props: LabelProps) => {
         x={numericX}
         y={numericY - valueOffset + dayOffset}
         textAnchor="middle"
-        fill="rgba(255,255,255,.6)"
+        fill={isDark ? '#a1a1a1' : '#574151'}
         fontSize={14}
         fontWeight={400}
       >
@@ -88,23 +90,23 @@ export default function TotalSales() {
           <Icon icon="tabler:dots" className="text-xl" />
         </button>
       </div>
-      <div className="totalSales absolute inset-x-0  bottom-0 h-[300px] px-4 min-h-[0]">
+      <div className="totalSales absolute inset-x-0  bottom-0 h-[300px] px-6 min-h-[0]">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} barCategoryGap="2%">
             <defs>
               <linearGradient id="solid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#1f1f1f" />
-                <stop offset="100%" stopColor="#1f1f1f" />
+                <stop offset="0%" stopColor="rgba(60, 110, 255, 1)" />
+                <stop offset="100%" stopColor="rgba(60, 110, 255, 1)" />
               </linearGradient>
               <pattern id="dots" width="4" height="4" patternUnits="userSpaceOnUse">
-                <circle cx=".5" cy=".5" r="1" fill="#1f1f1f" />
+                <circle cx=".5" cy=".5" r="1" fill="rgba(60, 110, 255, 1)" />
               </pattern>
               <pattern id="stripes" width="7" height="7" patternUnits="userSpaceOnUse">
-                <path d="M0 7 L7 0" stroke="#1f1f1f" strokeWidth="1" />
+                <path d="M0 7 L7 0" stroke="rgba(60, 110, 255, 1)" strokeWidth="1" />
               </pattern>
               <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#1f1f1f" />
-                <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+                <stop offset="0%" stopColor="rgba(60, 110, 255, 1)" />
+                <stop offset="100%" stopColor="rgba(60, 110, 255, 0)" />
               </linearGradient>
             </defs>
             <XAxis
