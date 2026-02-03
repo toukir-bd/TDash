@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
 
-      <body className="bg-[#ECF7FC] dark:bg-slate-900 text-slate-900 dark:text-white/80">
+      <body className="bg-[#ECF7FC] dark:bg-slate-800 text-slate-900 dark:text-white/80">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

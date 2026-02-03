@@ -33,48 +33,40 @@ const CustomBar = ({
 
 const CustomLabel = (props: LabelProps) => {
   const { x, y, width, value, index } = props
-  if (
-    x === undefined ||
-    y === undefined ||
-    width === undefined ||
-    value === undefined ||
-    index === undefined
-  )
-  return null
+  if (!x || !y || !width || value === undefined || index === undefined) return null
+
   const numericX = Number(x) + Number(width) / 2
   const numericY = Number(y)
-  const numericValue = Number(value)
   const day = data[index].name
-  const valueOffset = 30 // distance above bar for value
-  const dayOffset = 20  // distance from value to day
-  const isDark = typeof document !== "undefined" && document.documentElement.classList.contains("dark")
-
 
   return (
-    <g>
+    <g className="text-gray-700 dark:text-gray-200">
       <text
         x={numericX}
-        y={numericY - valueOffset}
+        y={numericY - 30}
         textAnchor="middle"
-        fill={isDark ? '#e9e9e9' : '#374151'}
+        fill="currentColor"
         fontSize={19}
         fontWeight={600}
       >
-        {`${numericValue}%`}
+        {`${value}%`}
       </text>
+
       <text
         x={numericX}
-        y={numericY - valueOffset + dayOffset}
+        y={numericY - 10}
         textAnchor="middle"
-        fill={isDark ? '#a1a1a1' : '#574151'}
-        fontSize={14}
-        fontWeight={400}
+        fill="currentColor"
+        className="opacity-70"
+        fontSize={12}
+        fontWeight={500}
       >
         {day}
       </text>
     </g>
   )
 }
+
 
 
 
