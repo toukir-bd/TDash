@@ -87,18 +87,18 @@ export default function TotalSales() {
           <BarChart data={data} barCategoryGap="2%">
             <defs>
               <linearGradient id="solid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(60, 110, 255, 1)" />
-                <stop offset="100%" stopColor="rgba(60, 110, 255, 1)" />
+                <stop offset="0%" stopColor="rgba(99, 95, 215, 1)" />
+                <stop offset="100%" stopColor="rgba(99, 95, 215, 1)" />
               </linearGradient>
               <pattern id="dots" width="4" height="4" patternUnits="userSpaceOnUse">
-                <circle cx=".5" cy=".5" r="1" fill="rgba(60, 110, 255, 1)" />
+                <circle cx=".5" cy=".5" r="1" fill="rgba(99, 95, 215, 1)" />
               </pattern>
               <pattern id="stripes" width="7" height="7" patternUnits="userSpaceOnUse">
-                <path d="M0 7 L7 0" stroke="rgba(60, 110, 255, 1)" strokeWidth="1" />
+                <path d="M0 7 L7 0" stroke="rgba(99, 95, 215, 1)" strokeWidth="1" />
               </pattern>
               <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="rgba(60, 110, 255, 1)" />
-                <stop offset="100%" stopColor="rgba(60, 110, 255, 0)" />
+                <stop offset="0%" stopColor="rgba(99, 95, 215, 1)" />
+                <stop offset="100%" stopColor="rgba(99, 95, 215, 0)" />
               </linearGradient>
             </defs>
             <XAxis
@@ -108,7 +108,7 @@ export default function TotalSales() {
               tick={false}
             />
             <Bar dataKey="value" shape={<CustomBar />}>
-              <LabelList dataKey="value" content={CustomLabel} />
+              <LabelList dataKey="value" content={CustomLabel} className='bg-[#635FD7]'/>
             </Bar>
           </BarChart>
         </ResponsiveContainer>

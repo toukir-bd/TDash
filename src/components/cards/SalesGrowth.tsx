@@ -13,10 +13,10 @@ import { Card } from '@/components/ui/card'
 import { Icon } from '@iconify/react'
 
 const COLORS = {
-  past: '#1f2937',
-  current: '#14532d',
-  active: '#22c55e',
-  future: '#334155',
+  past: '#AEADEA',
+  current: '#635FD7',
+  active: '#635FD7',
+  future: '#c9c9c9',
 }
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
@@ -58,7 +58,7 @@ const data: DayData[] = months.flatMap((month) =>
     const value =
       isPastMonth || isCurrentMonth
         ? SALES_DATA[month][dIndex]
-        : Math.floor(Math.random() * 400) + 200 // future month random
+        : Math.floor(Math.random() * 400) + 250
 
     return {
       month,
@@ -72,19 +72,12 @@ const data: DayData[] = months.flatMap((month) =>
   })
 )
 
-// interface TooltipProps {
-//   active?: boolean;
-//   payload?: Array<{ payload: any }>;
-//   label?: string | number;
-// }
-
 // Tooltip shows sum of month only for past/current months
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payload: DayData }[] }) => {
   if (!active || !payload?.length) return null
   const month = payload[0].payload.month
   if (months.indexOf(month) > months.indexOf(CURRENT_MONTH)) return null
   const total = MONTH_TOTALS[month] || 0
-
   return (
     <div className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-xs">
       <p className="text-gray-500">{month}</p>
@@ -111,38 +104,35 @@ export default function SalesGrowth() {
       </div>
 
       {/* Chart */}
-      <div className="h-[300px]">
+      <div className="h-[260px] mt-[20px] w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} barCategoryGap={2}>
+          <BarChart data={data} barCategoryGap={3} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
             <XAxis
               dataKey="month"
-              tick={{ fill: '#64748b', fontSize: 11 }}
+              tick={{ fill: '#64748b', fontSize: 12, fontWeight: 500, textAnchor: 'start' }}
               axisLine={false}
               tickLine={false}
               interval={DAYS_IN_MONTH - 1} // show month once
             />
             <YAxis
-              tick={{ fill: '#64748b', fontSize: 11 }}
+              width={35}
+              tick={{ fill: '#64748b', fontSize: 12, fontWeight: 500, textAnchor: 'end' }}
               axisLine={false}
               tickLine={false}
             />
             <Tooltip content={<CustomTooltip />} cursor={{ fill: 'transparent' }} />
-
-            <Bar dataKey="value" radius={[2, 2, 2, 2]}>
+            <Bar dataKey="value" radius={[2, 2, 2, 2]} barSize={2}>
               {data.map((d, i) => {
                 let fill = COLORS.past
-                let opacity = 0.6
-
+                let opacity = 1
                 if (d.isFutureMonth) {
                   fill = COLORS.future
-                  opacity = 0.5
+                  opacity = 1
                 } else if (d.isCurrentMonth) {
                   fill = COLORS.current
-                  opacity = d.isActiveDay ? 1 : 0.8
+                  opacity = d.isActiveDay ? 1 : 1
                 }
-
                 if (d.isActiveDay) fill = COLORS.active
-
                 return <Cell key={i} fill={fill} opacity={opacity} />
               })}
             </Bar>

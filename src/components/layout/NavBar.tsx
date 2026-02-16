@@ -11,7 +11,7 @@ import PageHeader from "./PageHeader"
 export default function NavBar() {
     const { theme, toggleTheme } = useTheme()
     return (
-        <div className="fixed right-0 top-0 flex justify-between gap-1 z-20 w-full p-5 ps-[120px] backdrop-blur-[10px] bg-[#edf1fc] dark:bg-gray-900">
+        <div className="fixed right-0 top-0 flex justify-between gap-1 z-20 w-full p-5 ps-[120px] backdrop-blur-[10px] bg-[#e4eaf7] dark:bg-gray-900">
             <PageHeader />
             <div className="flex gap-1">
                 <InputGroup className="searchBar">
