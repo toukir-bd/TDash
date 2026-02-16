@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 import TotalSales from "@/components/cards/TotalSales"
 import SalesGrowth from "@/components/cards/SalesGrowth"
 import CustomersCard from "@/components/cards/CustomersCard"
-import InventoryItem from "@/components/cards/InventoryItem"
+import TopSaleProduct from "@/components/cards/TopSaleProduct"
 
 export default function DashboardPage(): ReactNode {
   return (
@@ -13,7 +13,7 @@ export default function DashboardPage(): ReactNode {
         <SalesGrowth/>
         <CustomersCard/>
       </div>
-      <InventoryItem/>
+      <TopSaleProduct/>
     </div>
   )
 }
