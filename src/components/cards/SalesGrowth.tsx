@@ -14,8 +14,8 @@ import { Icon } from '@iconify/react'
 
 const COLORS = {
   past: '#AEADEA',
-  current: '#635FD7',
-  active: '#635FD7',
+  current: '#8100FF',
+  active: '#8100FF',
   future: '#c9c9c9',
 }
 

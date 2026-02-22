@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { Card } from '../ui/card'
+import { Icon } from '@iconify/react'
 
 type Product = {
   id: number
@@ -18,7 +20,7 @@ const products: Product[] = [
   {
     id: 1,
     name: 'Aspirin 500mg',
-    image: '/products/p1.png',
+    image: '/images/top-products/1.png',
     totalSales: 13460,
     stock: 450,
     threshold: 100,
@@ -26,7 +28,7 @@ const products: Product[] = [
   {
     id: 2,
     name: 'Paracetamol 650mg',
-    image: '/products/p2.png',
+    image: '/images/top-products/2.png',
     totalSales: 9820,
     stock: 90,
     threshold: 100,
@@ -34,7 +36,15 @@ const products: Product[] = [
   {
     id: 3,
     name: 'Vitamin C 1000mg',
-    image: '/products/p3.png',
+    image: '/images/top-products/3.png',
+    totalSales: 7560,
+    stock: 600,
+    threshold: 150,
+  },
+  {
+    id: 4,
+    name: 'Vitamin C 1000mg',
+    image: '/images/top-products/4.png',
     totalSales: 7560,
     stock: 600,
     threshold: 150,
@@ -43,19 +53,15 @@ const products: Product[] = [
 
 export default function TopSaleProduct() {
   return (
-    <div className="rounded-3xl p-6 
-      bg-white 
-      dark:bg-[#1f1f1f] 
-      shadow-md 
-      transition-colors duration-300">
-
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h3 className="text-lg font-semibold 
-          text-gray-900 
-          dark:text-gray-100">
-          Top Sale Product - Monthly
-        </h3>
+    <Card className="cardBox h-auto">
+      <div className="flex justify-between">
+        <div>
+          <h3 className="mainHead">Inventory Status</h3>
+          <h2 className="headValue tracking-tight">Top Sale Product</h2>
+        </div>
+        <button className="boxButton">
+          <Icon icon="tabler:dots" className="text-xl" />
+        </button>
       </div>
 
       <Swiper
@@ -129,6 +135,6 @@ export default function TopSaleProduct() {
           )
         })}
       </Swiper>
-    </div>
+    </Card>
   )
 }

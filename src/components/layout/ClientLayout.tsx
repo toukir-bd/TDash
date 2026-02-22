@@ -21,7 +21,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         ) : (
           <ProtectWrapper>
             <NavBar/>
-            <main>{children}</main>
+            <main className="relative z-10">{children}</main>
           </ProtectWrapper>
         )}
       </div>
